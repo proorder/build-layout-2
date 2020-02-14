@@ -52,7 +52,14 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('[name].[sha1:contenthash:base64].css'),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      filename: 'index.html',
+      template: 'index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index2.html',
+      template: 'index2.html',
+      chunks: ['main'],
     }),
     new SvgSpriteHtmlWebpackPlugin({
       includeFiles: [

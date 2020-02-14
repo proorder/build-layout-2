@@ -22,3 +22,7 @@
 @mixin for-desktop {
   @media (min-width: 870px) { @content; }
 }
+
+@mixin for-mobile {
+  @media (max-width: 550px) { @content; }
+}

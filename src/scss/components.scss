@@ -2,9 +2,16 @@
 @import './text';
 @import './mixins';
 
+.page-subtitle {
+  margin-top: 10px;
+  font-size: $size_h3;
+  color: $form-input-placeholder;
+}
+
 .footer {
+  flex: 0 0 auto;
   display: flex;
-  height: 80px;
+  height: 80px !important;
   justify-content: center;
   padding: 0 20px;
   align-items: start;
@@ -49,7 +56,7 @@
     font-size: $size_h2;
     color: $text-grey-light;
     text-decoration: none;
-    &_active, &:hover {
+    &_active {
       color: $text-grey-middle;
     }
   }
@@ -88,6 +95,9 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  & > a {
+    margin-left: 5px;
+  }
   &__box {
     display: flex;
     width: 21px;
@@ -157,5 +167,110 @@
   font-size: $size_h4;
   padding: 1.8rem;
   text-decoration: none;
+  text-align: center;
+}
+
+.price-table {
+  width: 100%;
+  font-size: $size_h3;
+  margin-top: 2.5rem;
+  .unnecessary-column {
+    display: none;
+    @include for-desktop {
+      display: table-cell;
+    }
+  }
+  td {
+    border-bottom: 2px solid $form-input-border;
+    line-height: 4rem;
+    color: $form-input-placeholder;
+    max-width: 360px;
+  }
+  thead > tr > td {
+    font-family: 'Helvetica Neue Cyr Light' !important;
+    text-align: left;
+    color: $text-grey !important;
+  }
+  td:first-of-type {
+    font-family: 'Helvetica Neue Cyr Medium';
+    color: $text-grey !important;
+  }
+  td:last-of-type {
+    text-align: right;
+  }
+}
+
+.warning-block {
+  @include border-box;
+  padding: 20px;
+  background-color: $base-grey;
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin-left: 1.5rem;
+    font-size: $size_h2;
+  }
+  &__text {
+    margin-top: 20px;
+  }
+}
+
+.order-block {
+  @include border-box;
+  padding: 20px;
+  background-color: $base-red;
+  width: 100%;
+  color: #FFF;
+  @include for-desktop {
+    width: 400px;
+  }
+  & > hr {
+    border: none;
+    height: 1px;
+    background-color: lighten($base-red, 5%);
+  }
+  &__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2rem;
+  }
+  &__list-item_big {
+    font-size: $size_h3;
+    line-height: 3rem;
+  }
+  &__button {
+    background-color: #FFF;
+    color: $base-red;
+  }
+}
+
+@keyframes wakeup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.info-cloud__icon {
+  &:hover + .info-cloud {
+    display: block;
+    animation: wakeup 500ms;
+  }
+}
+.info-cloud {
+  display: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $base-grey;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 3;
+  min-width: 200px;
   text-align: center;
 }
