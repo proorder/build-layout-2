@@ -1,0 +1,141 @@
+@import './normalize.css';
+@import './colors';
+@import './text';
+@import './components';
+
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr Light';
+  src: url('../assets/HelveticaNeueCyr-Light.eot');
+  src: url('../assets/HelveticaNeueCyr-Light.eot?#iefix') format('embedded-opentype'),
+  url('../assets/HelveticaNeueCyr-Light.woff') format('woff'),
+  url('../assets/HelveticaNeueCyr-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr Roman';
+  src: url('../assets/HelveticaNeueCyr-Roman.eot');
+  src: url('../assets/HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'),
+  url('../assets/HelveticaNeueCyr-Roman.woff') format('woff'),
+  url('../assets/HelveticaNeueCyr-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr Medium';
+  src: url('../assets/HelveticaNeueCyr-Medium.eot');
+  src: url('../assets/HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../assets/HelveticaNeueCyr-Medium.woff') format('woff'),
+  url('../assets/HelveticaNeueCyr-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 12px;
+  font-family: 'Helvetica Neue Cyr Light';
+  color: $text-grey;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: $base-red;
+  text-decoration: none;
+}
+
+.h1 {
+  font-size: $size_h1;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+.h2 {
+  font-size: $size_h2;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+.h3 {
+  font-size: $size_h3;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+.h4 {
+  font-size: $size_h4;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: $dark-grey;
+  height: 75px;
+  &__logo {
+    margin: 0 auto;
+  }
+}
+
+.page-content {
+  padding: 20px;
+  @include for-desktop {
+    padding: 100px 40px 40px 40px;
+  }
+  max-width: 1044px;
+  margin: 0 auto;
+}
+
+.order-form {
+  display: block;
+  @include for-desktop {
+    display: flex;
+  }
+  &__inputs {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include for-desktop {
+      margin-right: 44px;
+    }
+  }
+  &__input:not(:first-of-type) {
+    margin-top: 30px;
+    @include for-desktop {
+      margin: 0;
+    }
+  }
+  &__info-block {
+    width: 100%;
+    margin-top: 30px;
+    @include for-desktop {
+      width: 400px;
+      margin: 0;
+    }
+  }
+  &__confirm {
+    display: block;
+    margin-top: 30px;
+    @include for-desktop {
+      display: none;
+    }
+  }
+  &__form-check {
+    margin-top: 30px;
+  }
+}
+
+.order-confirm {
+  display: none;
+  margin-top: 30px;
+  @include for-desktop {
+    display: block;
+  }
+}

@@ -1,0 +1,161 @@
+@import './colors';
+@import './text';
+@import './mixins';
+
+.footer {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  padding: 0 20px;
+  align-items: start;
+  flex-direction: column-reverse;
+  background-color: $base-grey;
+  font-size: $size_h4;
+  line-height: 1.8rem;
+  @include for-desktop {
+    flex-direction: row;
+    padding: 0 130px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.all-rights-reserved {
+  font-family: 'Helvetica Neue Cyr Roman';
+  font-size: $size_h4;
+  color: $form-input-placeholder;
+}
+
+.page-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 23px;
+  padding-right: 23px;
+  background-color: $base-red;
+  width: 195px;
+}
+
+.jumbotron {
+  background-color: $base-grey;
+  color: $text-grey;
+  padding: 40px 0;
+  text-align: center;
+  &__h1 {
+    padding: 30px 0 !important;
+  }
+  &__link {
+    font-size: $size_h2;
+    color: $text-grey-light;
+    text-decoration: none;
+    &_active, &:hover {
+      color: $text-grey-middle;
+    }
+  }
+  &__credit-cards {
+    margin-top: 30px;
+  }
+}
+
+.form-input {
+  position: relative;
+  &__input {
+    @include border-box;
+    @include placeholder($form-input-placeholder);
+    font-size: $size_h3;
+    padding: 12px 54px 12px 12px;
+    border: 2px solid $form-input-border;
+    outline: none;
+    width: 100%;
+    line-height: 32px;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form-check {
+  height: 25px;
+  font-size: $size_h4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__box {
+    display: flex;
+    width: 21px;
+    height: 21px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $form-input-border;
+    margin-right: 10px;
+  }
+  &__input {
+    position: absolute;
+    display: none;
+    &:checked + .form-check__box {
+      & > .form-check__svg {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+  &__svg {
+    display: none;
+  }
+  &:hover {
+    .form-check__svg {
+      display: block;
+      opacity: 0.1;
+    }
+  }
+}
+
+.info-block {
+  background-color: $base-grey;
+  padding: 0 20px 20px 20px;
+  & > hr {
+    border: none;
+    margin: 0;
+    height: 1px;
+    background-color: lighten($text-grey-light, 15%) !important;
+  }
+  &__header {
+    font-family: 'Helvetica Neue Cyr Medium';
+    padding: 15px 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icon {
+    margin: 0 10px;
+  }
+  &__text {
+    margin: 15px 0 0 0;
+    padding: 0;
+  }
+  &__button {
+    display: none !important;
+    margin-top: 15px;
+    @include for-desktop {
+      display: block !important;
+    }
+  }
+}
+
+.button {
+  display: block;
+  background-color: $base-red;
+  color: #FFF;
+  font-size: $size_h4;
+  padding: 1.8rem;
+  text-decoration: none;
+  text-align: center;
+}
